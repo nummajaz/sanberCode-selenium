@@ -15,6 +15,23 @@ class LoginKasir1(unittest.TestCase):
         driver.find_element(By.ID, "email").send_keys("xxxx")
         driver.find_element(By.ID, "password").send_keys("xxxx")
         driver.find_element(By.CLASS_NAME, "chakra-button css-1n8i4of").click()
+    
+    def testRegister(self):
+        driver = self.browser
+        driver.get("https://kasirdemo.belajarqa.com/login")
+        driver.find_element(By.CLASS_NAME, "css-4rvv7a").click()
+        driver.find_element(By.ID, "name").send_keys("Juli")
+        driver.find_element(By.ID, "email").send_keys("Juli@gmail.com")
+        driver.find_element(By.ID, "password").send_keys("qweasd")
+        driver.find_element(By.CLASS_NAME, "chakra-button css-1n8i4of").click()   
+
+    def testSuccessLogin(self):
+        driver = self.browser
+        driver.get("https://kasirdemo.belajarqa.com/login")
+        driver.find_element(By.CLASS_NAME, "css-4rvv7a").click()
+        driver.find_element(By.ID, "email").send_keys("Juli@gmail.com")
+        driver.find_element(By.ID, "password").send_keys("qweasd")
+        driver.find_element(By.CLASS_NAME, "chakra-button css-1n8i4of").click()   
 
     def tearDown(self):
         self.browser.close()
